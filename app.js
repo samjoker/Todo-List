@@ -13,7 +13,7 @@ function btnsubmit(event) {
 	event.preventDefault();
 
 	if (inputName.value.trim() === '') {
-		alert('Enter todo');
+		alert('Enter Todos to add in');
 	} else {
 		//creatinng div
 		let todoDiv = document.createElement('div');
