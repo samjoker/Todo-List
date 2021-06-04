@@ -11,7 +11,8 @@ todoFilter.addEventListener('click', filter);
 function btnsubmit(event) {
 	//prevent browser reload
 	event.preventDefault();
-	if (inputName.value === '') {
+
+	if (inputName.value.trim() === '') {
 		alert('Enter todo');
 	} else {
 		//creatinng div
