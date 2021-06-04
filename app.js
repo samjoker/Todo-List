@@ -11,35 +11,39 @@ todoFilter.addEventListener('click', filter);
 function btnsubmit(event) {
 	//prevent browser reload
 	event.preventDefault();
+	if (inputName.value === '') {
+		alert('Enter todo');
+	} else {
+		//creatinng div
+		let todoDiv = document.createElement('div');
+		todoDiv.classList.add('todo-div');
+		// todoDiv.contentEditable = true;
 
-	//creatinng div
-	let todoDiv = document.createElement('div');
-	todoDiv.classList.add('todo-div');
-	// todoDiv.contentEditable = true;
+		//creatinng li
+		let todoList = document.createElement('li');
+		todoList.classList.add('todo-list');
+		todoList.innerText = inputName.value;
 
-	//creatinng li
-	let todoList = document.createElement('li');
-	todoList.classList.add('todo-list');
-	todoList.innerText = inputName.value;
-	saveLocal(inputName.value);
-	todoDiv.appendChild(todoList);
+		saveLocal(inputName.value);
+		todoDiv.appendChild(todoList);
 
-	//creatinng button
-	let todoChecked = document.createElement('button');
-	todoChecked.classList.add('todo-check');
-	todoChecked.innerHTML = '<i class="fas fa-check"></i>';
-	todoDiv.appendChild(todoChecked);
+		//creatinng button
+		let todoChecked = document.createElement('button');
+		todoChecked.classList.add('todo-check');
+		todoChecked.innerHTML = '<i class="fas fa-check"></i>';
+		todoDiv.appendChild(todoChecked);
 
-	//creatinng buttn delete
-	let todoDele = document.createElement('button');
-	todoDele.classList.add('todo-dele');
-	//adding innerhtml syle to it
-	todoDele.innerHTML = '<i class="fas fa-trash"></i>';
-	todoDiv.appendChild(todoDele);
+		//creatinng buttn delete
+		let todoDele = document.createElement('button');
+		todoDele.classList.add('todo-dele');
+		//adding innerhtml syle to it
+		todoDele.innerHTML = '<i class="fas fa-trash"></i>';
+		todoDiv.appendChild(todoDele);
 
-	//appending the child to main div
-	todoContainer.appendChild(todoDiv);
-	inputName.value = '';
+		//appending the child to main div
+		todoContainer.appendChild(todoDiv);
+		inputName.value = '';
+	}
 }
 
 function deletecheck(event) {
