@@ -9,6 +9,7 @@ body {
 	color: white;
 	font-family: 'Poppins', sans-serif;
 	min-height: 100vh;
+	overflow: hidden;
 }
 header {
 	font-size: 2rem;
@@ -140,4 +141,10 @@ select {
 select:hover {
 	background: white;
 	color: #6584e4;
+}
+@media screen and (min-width: 700px) {
+	.select {
+		display: flex;
+		flex-direction: row;
+	}
 }
